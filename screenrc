@@ -1,0 +1,6 @@
+autodetach      on
+defscrollback   99999
+startup_message off
+hardstatus      alwayslastline
+hardstatus      string "%= %?%-Lw%? *%n%f %t %?%+Lw%? %= "
+vbell           off
