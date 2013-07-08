@@ -1,0 +1,15 @@
+# source this file from .bashrc
+#
+# 
+SSH_AGENT_ENV_FILE="${HOME}/.ssh_agent_env"
+
+function start_ssh_agent {
+    ssh-agent | grep -v "echo Agent pid" > ${SSH_AGENT_ENV_FILE}
+    chmod 600 ${SSH_AGENT_ENV_FILE}
+    . ${SSH_AGENT_ENV_FILE}
+    ssh-add
+}
+
+[ -f "${SSH_AGENT_ENV_FILE}" ] && . ${SSH_AGENT_ENV_FILE}
+
+ssh-add -l >/dev/null 2>&1 || start_ssh_agent

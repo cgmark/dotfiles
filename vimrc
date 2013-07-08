@@ -34,8 +34,14 @@ let Tlist_Enable_Fold_Column=0
 let Tlist_Process_File_always=1
 let Tlist_GainFocus_On_ToggleOpen=1
 
-"highlight BadWhitespace ctermbg=red guibg=red
-"au FileType python match BadWhitespace /^\t\+/
-"au FileType python match BadWhitespace /\s\+$/
+highlight BadWhitespace ctermbg=red guibg=red
+au FileType python match BadWhitespace /^\t\+/
+au FileType python match BadWhitespace /\s\+$/
 
+" remove trailing whitespace when writing .py files
+au BufWritePre *.py :%s/\s\+$//e
+ 
 "au FileType python setlocal tabstop=4 softtabstop=4 shiftwidth=4 setlocal textwidth=80 smarttab expandtab
+
+nnoremap <c-]> g<c-]>
+vnoremap <c-]> g<c-]>
