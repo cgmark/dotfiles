@@ -1,0 +1,6 @@
+[user]
+    name = cgmark
+    email = cgmark@gmail.com
+
+[alias]
+    glog = log --graph --oneline --all --decorate

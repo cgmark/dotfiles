@@ -1,0 +1,3 @@
+[ -f ~/.bashrc.aliases ] && . ~/.bashrc.aliases
+[ -f ~/.bashrc.functions ] && . ~/.bashrc.functions
+[ -f ~/.bashrc.ssh ] && . ~/.bashrc.ssh
